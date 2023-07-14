@@ -2,7 +2,7 @@ from Partition import Partition
 
 
 class  Consumer(object):
-    def __init__(self, id = "", partitions=None, mu =0.0):
+    def __init__(self, id = "", partitions: list[Partition]= None, mu =0.0):
         if partitions is None:
             partitions = []
         self.partitions = partitions
