@@ -3,16 +3,11 @@ from Partition import Partition
 
 
 def scaledLeastLoaded(partitions: list[Partition], f:float):
-
-
-
     partitions.sort(reverse=True)
 
     for partition in range(len(partitions)):
         print(partitions[partition])
     consCount = 1
-
-
     while True:
         consumers : list[Consumer] = []
         for i in range(consCount):
