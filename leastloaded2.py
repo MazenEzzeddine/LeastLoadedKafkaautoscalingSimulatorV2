@@ -11,7 +11,7 @@ def scaledLeastLoaded(partitions: list[Partition], f:float):
     while True:
         consumers : list[Consumer] = []
         for i in range(consCount):
-            consumer = Consumer(str(i), [],  175.0)
+            consumer = Consumer(str(i), [],  85.0)
             consumers.append(consumer)
 
         for j in range(len(partitions)):
@@ -25,15 +25,14 @@ def scaledLeastLoaded(partitions: list[Partition], f:float):
                 break
         else:
             break
-    for cons in consumers:
-        print(cons)
+    return consumers
 
 if __name__=='__main__':
     p0 = Partition("p0", 50.0, 0.0)
     p1 = Partition("p1", 25.0, 0.0)
-    p2 = Partition("p2", 150.0, 0.0)
+    p2 = Partition("p2", 80.0, 0.0)
     p3 = Partition("p3", 75.0, 0.0)
-    p4 = Partition("p4", 100.0, 0.0)
+    p4 = Partition("p4", 80.0, 0.0)
     partitions : list[Partition] = [p0,p1,p2,p3,p4]
 
     #print(partitions)

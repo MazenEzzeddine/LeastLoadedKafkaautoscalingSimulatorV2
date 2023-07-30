@@ -14,7 +14,9 @@ class  Consumer(object):
         return str1 + " partitions " + str2
 
     def __eq__(self, other):
-        return self.partitions == other.partitions and self.mu == other.mu
+        #return self.partitions == other.partitions and self.mu == other.
+        return self.getLamda == other.getLamda and self.mu == other.mu
+
         # need to be redefined.
 
     def __lt__(self, other):
@@ -34,6 +36,11 @@ class  Consumer(object):
         for p in self.partitions:
             lag += p.lag
         return lag
+
+
+    def assignPartition(self, p:Partition):
+        self.partitions.append(p)
+        self.lam
 
 
     def getLamda(self):
